@@ -13,7 +13,7 @@ export const fetchPizzas = (sortBy, category) => (dispatch) => {
 
     axios
         .get(
-            `https://615ac27e4a360f0017a81258.mockapi.io/items?${category !== null ? `category=${category}` : ''}&sortBy=${
+            `https://618ae65334b4f400177c4915.mockapi.io/items?${category !== null ? `category=${category}` : ''}&sortBy=${
                 sortBy.type
             }&order=${sortBy.order}`,
         )
