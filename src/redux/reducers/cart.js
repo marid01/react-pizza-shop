@@ -7,14 +7,18 @@ const initialState = {
 const getTotalPrice = (arr) => arr.reduce((sum, obj) => obj.price + sum, 0);
 
 const _get = (obj, path) => {
+  debugger
   const [firstKey, ...keys] = path.split('.');
   return keys.reduce((val, key) => {
+    debugger
     return val[key];
   }, obj[firstKey]);
 };
 
 const getTotalSum = (obj, path) => {
+  debugger
   return Object.values(obj).reduce((sum, obj) => {
+    debugger
     const value = _get(obj, path);
     return sum + value;
   }, 0);
@@ -34,7 +38,6 @@ const cart = (state = initialState, action) => {
           totalPrice: getTotalPrice(currentPizzaItems),
         },
       };
-console.log(currentPizzaItems)
       const totalCount = getTotalSum(newItems, 'items.length');
       const totalPrice = getTotalSum(newItems, 'totalPrice');
 

@@ -2,6 +2,8 @@
   "name": "react-pizza",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://marid01.github.io/react-pizza-shop/",
+  "proxy": "https://618ae65334b4f400177c4915.mockapi.io/",
   "dependencies": {
     "@babel/core": "7.9.0",
     "@svgr/webpack": "4.3.3",
@@ -73,7 +75,9 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
-    "server": "npx json-server --watch public/db.json --port=3001"
+    "server": "npx json-server --watch public/db.json --port=3001",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -145,6 +149,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^3.2.3",
     "sass": "^1.49.9"
   }
 }
